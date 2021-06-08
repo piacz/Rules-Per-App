@@ -1,6 +1,6 @@
-# Easy User Authentication for React Apps
+# React App
 
-This repository hosts a React project that defines a Single-Page Application (SPA). You'll secure access to some of its routes using Auth0 User Authentication.
+This repository hosts a React project that defines a Single-Page Application (SPA). The access to some of its routes is protected using Auth0 User Authentication.
 
 ## Get Started
 
