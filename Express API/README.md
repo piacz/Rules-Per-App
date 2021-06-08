@@ -27,7 +27,7 @@ AUTH0_DOMAIN=
 AUTH0_API_ID=
 AUTH0_API_SECRET=
 ```
-Or copy the .env.example and populate with your own values:
+Or copy the `.env.example` and populate with your own values:
 ```bash
 cp .env.example .env
 ```
