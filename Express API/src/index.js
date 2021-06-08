@@ -5,7 +5,6 @@ const cors = require("cors");
 const helmet = require("helmet");
 const { clientOrigins, serverPort, domain, apiId, apiSecret } = require("./config/env.dev");
 
-const { messagesRouter } = require("./messages/messages.router");
 const { listsRouter } = require("./lists/lists.router");
 
 /**
@@ -27,7 +26,6 @@ app.use(express.json());
 
 app.use("/api", apiRouter);
 
-apiRouter.use("/messages", messagesRouter);
 apiRouter.use("/lists", listsRouter);
 
 app.use(function (err, req, res, next) {
