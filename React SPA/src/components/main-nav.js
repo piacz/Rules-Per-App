@@ -17,7 +17,7 @@ const MainNav = () => (
       className="nav-link"
       activeClassName="router-link-exact-active"
     >
-      Apps List
+      Applications List
     </NavLink>
   </div>
 );
