@@ -3,7 +3,7 @@ var axios = require("axios").default;
 const express = require("express");
 const { checkJwt } = require("../authz/check-jwt");
 
-const { domain, apiId, apiSecret } = require("./config/env.dev");
+const { domain, apiId, apiSecret } = require("../config/env.dev");
 
 
 const listsRouter = express.Router();
@@ -51,8 +51,6 @@ listsRouter.get("/rules-lists", checkJwt, async (req, res) => {
 
         let clients = {};
         tenantClients.map( (client) => {clients[client.name] = []});
-
-        console.log('first client' + clients)
         
         for ( i = 0 ; i < tenantRules.length ; i++ ) {
             let allApps =  true;
