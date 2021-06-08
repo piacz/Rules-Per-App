@@ -27,3 +27,7 @@ cd auth0-rules-per-app
 ```bash
 npm install
 ```
+  3. Configure enviroment variables according to the instructions on each Readme file on the Client and Api. Finally, start on each one of them.
+```bash
+npm start
+```
