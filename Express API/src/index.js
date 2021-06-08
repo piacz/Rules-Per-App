@@ -11,7 +11,9 @@ const { listsRouter } = require("./lists/lists.router");
 /**
  * App Variables
  */
-
+let whitelist = `['piaczernyk@gmail.com', 'user2@example.com']` // Whitelist of authorized users
+let client = 'Front Rules Per App' // Client to apply the rule
+let nameOfRule = 'Whitelist for an App' // Name of the rule, rules can't repeat the same name than other rules in the tenant
 const app = express();
 const apiRouter = express.Router();
 
@@ -52,20 +54,24 @@ var tokenRequest = {
 
 app.listen(serverPort, async () => {
   console.log(`API Server listening on port ${serverPort}`)
-  let managementToken = (await axios.request(tokenRequest)).data.access_token;
+  try {
 
-  // var options = {
-  //   method: 'POST',
-  //   url: 'https://dev-piacz.us.auth0.com/api/v2/rules',
-  //   headers: {
-  //     'content-type': 'application/json',
-  //     authorization: `Bearer ${managementToken}`,
-  //     'cache-control': 'no-cache'
-  //   },
-  //   data: {name: "Whitelist for a Specific App", 
-  //   script: "function userWhitelistForSpecificApp(user, context, callback) {\n  // Access should only be granted to verified users.\n  if (!user.email || !user.email_verified) {\n    return callback(new UnauthorizedError('Access denied.'));\n  }\n\n  // only enforce for NameOfTheAppWithWhiteList\n  // bypass this rule for all other apps\n  if (context.clientName !== 'Piauth0') {\n    return callback(null, user, context);\n  }\n\n  const whitelist = ['piaczernyk@gmail.com', 'user2@example.com']; // authorized users\n  const userHasAccess = whitelist.some(function (email) {\n    return email === user.email;\n  });\n\n  if (!userHasAccess) {\n    return callback(new UnauthorizedError('Access denied.'));\n  }\n\n  callback(null, user, context);\n}",}
-  // };
+    let managementToken = (await axios.request(tokenRequest)).data.access_token;
   
-  // await axios.request(options)
+    var options = {
+      method: 'POST',
+      url: `https://${domain}/api/v2/rules`,
+      headers: {
+        'content-type': 'application/json',
+        authorization: `Bearer ${managementToken}`,
+        'cache-control': 'no-cache'
+      },
+      data: {name: `${nameOfRule}`, 
+      script: `function userWhitelistForSpecificApp(user, context, callback) {\n  // Access should only be granted to verified users.\n  if (!user.email || !user.email_verified) {\n    return callback(new UnauthorizedError('Access denied.'));\n  }\n\n  // only enforce for NameOfTheAppWithWhiteList\n  // bypass this rule for all other apps\n  if (context.clientName !== ${client}) {\n    return callback(null, user, context);\n  }\n\n  const whitelist = ${whitelist}; // authorized users\n  const userHasAccess = whitelist.some(function (email) {\n    return email === user.email;\n  });\n\n  if (!userHasAccess) {\n    return callback(new UnauthorizedError('Access denied.'));\n  }\n\n  callback(null, user, context);\n}`,}
+    };
+    
+    await axios.request(options)
+  } catch(error) {
+    res.send('If the error is a 409: rules can`t repeat names on the tenant')
   }
-);
+});
