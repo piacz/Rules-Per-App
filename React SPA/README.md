@@ -1,6 +1,6 @@
 # React App
 
-This repository hosts a React project that defines a Single-Page Application (SPA). The access to some of its routes is protected using Auth0 User Authentication.
+This repository hosts a React project that defines a Single-Page Application (SPA). The access to some of its routes is protected using Auth0 User Authentication and <a href='https://auth0.com/docs/libraries/auth0-react'>Auth0 React SDK</a>, which uses React Context to manage the authentication state of the users. This allows not only protecting the routes from the back-end but from the front-end too using the `withAuthenticationRequired` higher order component and `useAuth0` hook.
 
 ## Step by step to run the application locally:
 
