@@ -1,14 +1,16 @@
 import React, { useEffect, useState } from "react";
 import { useAuth0 } from "@auth0/auth0-react";
+import { Loading } from "../components/index";
+
+import "../css/external-api.css";
 
 const ExternalApi = () => {
   const [message, setMessage] = useState("");
-  const [error, setError] = useState("");
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
   const serverUrl = process.env.REACT_APP_SERVER_URL;
 
   const { getAccessTokenSilently } = useAuth0();
-
-
 
   const callSecureApi = async () => {
     try {
@@ -24,8 +26,9 @@ const ExternalApi = () => {
       );
 
       const responseData = await response.json();
-
+      setLoading(false)
       setMessage(responseData);
+
     } catch (error) {
       setError(error);
     }
@@ -38,14 +41,15 @@ const ExternalApi = () => {
   }, [])
 
   return (
-    <div className="container">
-      
+    <div id="containerApps">   
+      {loading===true ? <Loading /> : null} 
       {error && <div>{error}</div>}
       {message && Object.keys(message).map( app => (
-        <div>
-          <h1>{app}</h1>
+        <div className='appCard'>
+          <h2 id='appName'>{app}</h2>
+          <div>Applied rules:</div>
           {message[app].map( rule => (
-            <h4>{rule}</h4>
+            <h4 id='appRule'>{rule}</h4>
           ))}
         </div> 
         )

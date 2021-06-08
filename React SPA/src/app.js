@@ -3,10 +3,10 @@ import { Route, Switch } from "react-router-dom";
 import { useAuth0 } from "@auth0/auth0-react";
 
 import { NavBar, Footer, Loading } from "./components";
-import { Home, Profile, ExternalApi } from "./views";
+import { Home,  ExternalApi } from "./views";
 import ProtectedRoute from "./auth/protected-route";
 
-import "./app.css";
+import "./css/app.css";
 
 const App = () => {
   const { isLoading } = useAuth0();
@@ -16,10 +16,11 @@ const App = () => {
   }
 
   return (
-    <div id="app" className="d-flex flex-column h-100">
+    <div id='app' >
       <NavBar />
-      <div className="container flex-grow-1">
+      <div className="container flex-grow-1" id='app'>
         <Switch>
+          <Route exact path="/" component={Home} />
           <ProtectedRoute path="/external-api" component={ExternalApi} />
         </Switch>
       </div>

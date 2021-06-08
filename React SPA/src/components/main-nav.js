@@ -4,12 +4,20 @@ import React from "react";
 const MainNav = () => (
   <div className="navbar-nav mr-auto">
     <NavLink
+      to="/"
+      exact
+      className="nav-link"
+      activeClassName="router-link-exact-active"
+    >
+      Home
+    </NavLink>
+    <NavLink
       to="/external-api"
       exact
       className="nav-link"
       activeClassName="router-link-exact-active"
     >
-      List of apps
+      Apps List
     </NavLink>
   </div>
 );

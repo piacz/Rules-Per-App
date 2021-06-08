@@ -1,10 +1,28 @@
 import React, { Fragment } from "react";
 
+import "../css/home.css";
 
 
 const Home = () => (
   <Fragment>
-
+    <div id='homeContainer'>
+      <h1>Rules per Application Sample Project</h1>
+      <div className='homeText'>
+        <p>This is a sample application that 
+          demonstrates a connection with <a href='https://auth0.com/docs/api/management/v2'>Auth0's Management 
+          API</a> to access dynamically every application configured on a 
+          tenant and their respective applied rules on the <a href='http://localhost:4040/external-api'>Apps List section</a>. The endpoints 
+          used through an Express API are:
+        </p>
+        <ul>
+          <li>/api/v2/rules</li>
+          <li>/api/v2/clients</li>
+        </ul>
+        <p>This resource is protected by Auth0's authentication and Authorization
+          by the <a href='https://auth0.com/rules/simple-user-whitelist'> Whitelist for a Specific App rule</a>
+        </p>
+      </div>
+    </div>
   </Fragment>
 );
 
