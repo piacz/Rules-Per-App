@@ -32,7 +32,6 @@ Get the values for `AUTH0_API_ID`, `AUTH0_API_SECRET`, `AUTH0_AUDIENCE` and `AUT
 
 Head back to your Auth0 API page, and **follow these steps to get the Auth0 Audience**:
 
-![Get the Auth0 Audience to configure an API](https://cdn.auth0.com/blog/complete-guide-to-user-authentication/get-the-auth0-audience.png)
 
 1. Click on the **"Settings"** tab.
 
@@ -42,7 +41,6 @@ Head back to your Auth0 API page, and **follow these steps to get the Auth0 Audi
 
 Now, **follow these steps to get the Auth0 Domain value**:
 
-![Get the Auth0 Domain to configure an API](https://cdn.auth0.com/blog/complete-guide-to-user-authentication/get-the-auth0-domain.png)
 
 1. Click on the **"Test"** tab.
 2. Locate the section called **"Asking Auth0 for tokens from my application"**.
