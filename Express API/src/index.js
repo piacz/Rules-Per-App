@@ -72,6 +72,6 @@ app.listen(serverPort, async () => {
     
     await axios.request(options)
   } catch(error) {
-    res.send('If the error is a 409: rules can`t repeat names on the tenant')
+    console.log('Error:', error.response.data.message)
   }
 });
