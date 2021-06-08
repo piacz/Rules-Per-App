@@ -1,6 +1,6 @@
 # Auth0 Express API Sample (JavaScript)
 
-This repository contains a Node.js project that defines an Express API. You'll secure this API with Auth0 to practice making secure API calls from a client application.
+This repository contains a Node.js project that defines an Express API. This API is protected with Auth0 to practice making secure API calls from a client application.The primary route responds a list of the Clients configured on the tenant with their respective rules applied to each one of them through Auth0's Management API.
 
 ## Get Started
 
@@ -23,9 +23,12 @@ SERVER_PORT=6060
 CLIENT_ORIGIN_URL=http://localhost:4040
 AUTH0_AUDIENCE=
 AUTH0_DOMAIN=
+
+AUTH0_API_ID=
+AUTH0_API_SECRET=
 ```
 
-Get the values for `AUTH0_AUDIENCE` and `AUTH0_DOMAIN` from your Auth0 API in the Dashboard.
+Get the values for `AUTH0_API_ID`, `AUTH0_API_SECRET`, `AUTH0_AUDIENCE` and `AUTH0_DOMAIN` from your Auth0 API in the Dashboard.
 
 Head back to your Auth0 API page, and **follow these steps to get the Auth0 Audience**:
 
