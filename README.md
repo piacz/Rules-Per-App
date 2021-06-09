@@ -14,6 +14,8 @@ A rule was applied to this application to restrict the access to the main resour
 
   1. Sign in to your Auth0 account.
   2. Create a Node Express API in Auth0 (Machine to Machine). Once created, in the APIs section, authorize it to request access tokens from the Auth0 Management API, also selecting the permissions needed. In this case: `read:clients`, `read:rules`, and `create:rules`.
+  ![Token auth example](https://user-images.githubusercontent.com/73494684/121382327-dd0fce80-c91c-11eb-8dd3-39b38e41f136.jpg)
+
   3. Create a Single Page Application in Auth0 and allow your localhost `http://localhost:4040/` in the Callback URLs, Logout URLs and Web Origins sections.
 
 ## Running the app
