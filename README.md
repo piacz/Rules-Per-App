@@ -2,7 +2,7 @@
 
 This sample Application demonstrates how to create a Single Page Application that interacts with Auth0's Management API. On successful login, it dynamically generates a list of the Clients configured on a tenant with their respective rules applied to each one of them. The React front-end makes calls to an Express API as a back-end service protected with Auth0 Authentication and Authorization.
 
-A rule was applied to this application to restrict the access the main resource to a specific whitelist of users.
+A rule was applied to this application to restrict the access to the main resource to a specific whitelist of users.
 
 ![2021-06-08 (2)](https://user-images.githubusercontent.com/73494684/121229704-ac6c5e00-c864-11eb-9e62-97d65c76a99b.png)
 
@@ -27,7 +27,7 @@ cd auth0-rules-per-app
 ```bash
 npm install
 ```
-  3. Configure enviroment variables according to the instructions on each Readme file on the Client and Api. Finally, start on each one of them.
+  3. Configure enviroment variables according to the instructions on each Readme file from the Client and Api. Finally, start on each one of them.
 ```bash
 npm start
 ```
