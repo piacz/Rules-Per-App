@@ -4,7 +4,8 @@ This sample Application demonstrates how to create a Single Page Application tha
 
 A rule was applied to this application to restrict the access to the main resource to a specific whitelist of users.
 
-![2021-06-08 (2)](https://user-images.githubusercontent.com/73494684/121229704-ac6c5e00-c864-11eb-9e62-97d65c76a99b.png)
+![2021-06-09 (3)](https://user-images.githubusercontent.com/73494684/121418435-56211d00-c941-11eb-8ecb-b9b991180ca3.png)
+
 
 <hr>
 
