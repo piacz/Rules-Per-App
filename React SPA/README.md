@@ -16,9 +16,9 @@ touch .env
 ```
 3. Populate `.env` as follows:
 ```
-REACT_APP_AUTH0_DOMAIN=<your domain>
-REACT_APP_AUTH0_CLIENT_ID=<your client ID>
-REACT_APP_AUTH0_AUDIENCE=<https://express.sample>
+REACT_APP_AUTH0_DOMAIN={YOUR AUTH0 DOMAIN}
+REACT_APP_AUTH0_CLIENT_ID={YOUR AUTH0 CLIENT ID}
+REACT_APP_AUTH0_AUDIENCE={YOUR API IDENTIFIER https://express.sample}
 REACT_APP_SERVER_URL=http://localhost:6060
 ```
 Or use the `.env.example` and populate with your own values:
