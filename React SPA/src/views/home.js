@@ -15,8 +15,9 @@ const Home = () => (
           called through an Express API are:
         </p>
         <ul>
-          <li>/api/v2/rules</li>
-          <li>/api/v2/clients</li>
+          <li>GET /api/v2/rules</li>
+          <li>GET /api/v2/clients</li>
+          <li>POST /api/v2/rules</li>
         </ul>
         <p>This resource is protected by Auth0's authentication and Authorization
           by the <a href='https://auth0.com/rules/simple-user-whitelist'> Whitelist for a Specific App rule</a>
