@@ -21,9 +21,8 @@ var tokenRequest = {
   };
 
 // GET lists/
-// checkJwt
 
-listsRouter.get("/rules-lists", async (req, res) => {
+listsRouter.get("/rules-lists", checkJwt, async (req, res) => {
     try {
         let managementToken = (await axios.request(tokenRequest)).data.access_token;
 
