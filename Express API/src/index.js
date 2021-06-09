@@ -10,7 +10,7 @@ const { listsRouter } = require("./lists/lists.router");
 /**
  * App Variables
  */
-let whitelist = `['piaczernyk@gmail.com', 'user2@example.com']` // Whitelist of authorized users
+let whitelist = `['piaczernyk@gmail.com','colin.coutts@auth0.com', 'user2@example.com']` // Whitelist of authorized users
 let client = 'Front Rules Per App' // Client to apply the rule
 let nameOfRule = 'Whitelist for an App' // Name of the rule, rules can't repeat the same name than other rules in the tenant
 const app = express();
