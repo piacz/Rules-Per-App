@@ -20,5 +20,16 @@
 }
 
 #appRule{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
     padding: 3px;
+    border-bottom: solid rgba(146, 156, 173, 0.322) 1px;
+}
+#disabled{
+    color: red;
+}
+#enabled{
+    color:rgb(16, 173, 16);
 }

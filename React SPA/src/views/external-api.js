@@ -49,7 +49,10 @@ const ExternalApi = () => {
           <h2 id='appName'>{app}</h2>
           <div>Applied rules:</div>
           {message[app].map( rule => (
-            <h4 id='appRule'>{rule}</h4>
+            <div id='appRule'>
+              <h4>{rule.name}</h4>
+              {rule.enabled? <div id='enabled'>Enabled</div> : <div id='disabled'>Disabled</div>}
+            </div>
           ))}
         </div> 
         )

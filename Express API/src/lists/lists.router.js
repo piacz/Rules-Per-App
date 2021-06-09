@@ -47,6 +47,7 @@ listsRouter.get("/rules-lists", async (req, res) => {
 
         const tenantClients = (await axios.request(clientsRequest)).data;
         const tenantRules = (await axios.request(rulesRequest)).data;
+        console.log(tenantRules)
 
 
         let clients = {};
@@ -57,21 +58,22 @@ listsRouter.get("/rules-lists", async (req, res) => {
             for ( j = 0 ; j < tenantClients.length ; j++ ) {
                 
                 if ( tenantRules[i].script.includes(tenantClients[j].name )){
-                    allApps = false;
-                    
-                    clients[tenantClients[j].name].push(
-                        tenantRules[i].name
-                    );
-                    
+                    allApps = false;   
+                    clients[tenantClients[j].name].push({
+                        name: tenantRules[i].name,
+                        enabled: tenantRules[i].enabled,
+                    });                
                 };    
             };
             if ( allApps === true ) {
                 for ( let app in clients ) {
-                    clients[app].push(tenantRules[i].name)
+                    clients[app].push({
+                        name:tenantRules[i].name,
+                        enabled: tenantRules[i].enabled,
+                    })
                 };
             };
-        };
-        
+        };       
         res.status(200).json(clients);
     } catch (error) {
         res.send(error);
