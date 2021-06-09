@@ -2,6 +2,16 @@
 
 This repository contains a Node.js project that defines an Express API. This API is protected with Auth0 to practice making secure API calls from a client application.The primary route responds a list of the Clients configured on the tenant with their respective rules applied to each one of them through Auth0's Management API.
 
+The sample includes these Management API endpoints:
+
+<ul>
+  <li>GET /api/v2/rules</li>
+  <li>GET /api/v2/clients</li>
+  <li>POST /api/v2/rules</li>
+ </ul>
+ 
+ To use all of them, an Auth0 Management API token is required.
+
 ## Enviroment Variables Configuration
 
 Install the client project dependencies:
@@ -21,11 +31,11 @@ Populate `.env` as follows:
 ```bash
 SERVER_PORT=6060
 CLIENT_ORIGIN_URL=http://localhost:4040
-AUTH0_AUDIENCE=
-AUTH0_DOMAIN=
+AUTH0_AUDIENCE={API_IDENTIFIER}
+AUTH0_DOMAIN={DOMAIN}
 
-AUTH0_API_ID=
-AUTH0_API_SECRET=
+AUTH0_API_ID={API ID}
+AUTH0_API_SECRET={API SECRET}
 ```
 Or copy the `.env.example` and populate with your own values:
 ```bash
